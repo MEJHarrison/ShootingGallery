@@ -38,28 +38,15 @@ public class TargetBehavior : MonoBehaviour
 
             PlaySoundEffectAndParticles();
 
-            if (animator == null)
-            {
-                Debug.Log("The target has no animator.");
-            }
-            else
-            {
-                Debug.Log("The target has an animator!");
-            }
             animator?.SetTrigger("TriggerTargetDown");
 
             ITargetBehavior animatedObject = this.gameObject.GetComponentInParent<ITargetBehavior>();
 
             if (animatedObject != null)
             {
-                Debug.Log("Let's play the animations on whatever I'm attached to.");
                 animatedObject.PlayAnimations();
 
                 StartCoroutine(DelayAnimation());
-            }
-            else
-            {
-                Debug.Log("We have no animated object.");
             }
         }
     }

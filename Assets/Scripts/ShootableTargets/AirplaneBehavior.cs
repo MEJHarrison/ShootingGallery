@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CowboyBehavior : MonoBehaviour, ITargetBehavior
+public class AirplaneBehavior : MonoBehaviour, ITargetBehavior
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private AudioClip spinSound = null;
+    [SerializeField] private AudioClip planeSound = null;
     [SerializeField] private GameObject targetPrefab = null;
     [SerializeField] private float targetScale = 1.0f;
     //[SerializeField] private int pointValue = 10;
@@ -25,9 +25,9 @@ public class CowboyBehavior : MonoBehaviour, ITargetBehavior
     [ContextMenu("Play Animations")]
     public void PlayAnimations()
     {
-        animator?.SetTrigger("TriggerCowboySpin");
+        animator?.SetTrigger("TriggerAirplaneFly");
 
-        _audioSource?.PlayOneShot(spinSound);
+        _audioSource?.PlayOneShot(planeSound);
 
         //_shootingGalleryService?.AddToScore(pointValue);
     }

@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class CowboyBehavior : MonoBehaviour, ITargetBehavior
+public class FireBehavior : MonoBehaviour, ITargetBehavior
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private AudioClip spinSound = null;
+    [SerializeField] private ParticleSystem fireParticlesPrefab = null;
+    [SerializeField] private ParticleSystem smokeParticlesPrefab = null;
+    [SerializeField] private float partcilesTime = 3.0f;
+    [SerializeField] private AudioClip campfireSound = null;
     [SerializeField] private GameObject targetPrefab = null;
     [SerializeField] private float targetScale = 1.0f;
     //[SerializeField] private int pointValue = 10;
@@ -25,10 +29,22 @@ public class CowboyBehavior : MonoBehaviour, ITargetBehavior
     [ContextMenu("Play Animations")]
     public void PlayAnimations()
     {
-        animator?.SetTrigger("TriggerCowboySpin");
+        fireParticlesPrefab?.Play();
+        smokeParticlesPrefab?.Play();
 
-        _audioSource?.PlayOneShot(spinSound);
+        StartCoroutine(ParticleTimer());
+
+
+        _audioSource?.PlayOneShot(campfireSound);
 
         //_shootingGalleryService?.AddToScore(pointValue);
+    }
+
+    IEnumerator ParticleTimer()
+    {
+        yield return new WaitForSeconds(partcilesTime);
+
+        fireParticlesPrefab?.Stop();
+        smokeParticlesPrefab?.Stop();
     }
 }
