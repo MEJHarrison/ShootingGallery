@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 861171542693267622}
   - component: {fileID: 861171542693267620}
   - component: {fileID: 861171542693267621}
+  - component: {fileID: 3043211487287994415}
   m_Layer: 0
   m_Name: Target
   m_TagString: Target
@@ -72,6 +73,20 @@ MonoBehaviour:
   targetHitParticles: {fileID: 0}
   targetHitParticlesTime: 0.5
   targetHitSound: {fileID: 8300000, guid: cda632edee0074fef920bf639cf617ad, type: 3}
+--- !u!64 &3043211487287994415
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861171542693267623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8332f017cfb13984196e491ffb1aaf3f, type: 3}
 --- !u!1001 &861171544293579526
 PrefabInstance:
   m_ObjectHideFlags: 0
