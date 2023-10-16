@@ -6,15 +6,15 @@ public class CowboyBehavior : MonoBehaviour, ITargetBehavior
     [SerializeField] private AudioClip spinSound = null;
     [SerializeField] private GameObject targetPrefab = null;
     [SerializeField] private float targetScale = 1.0f;
-    //[SerializeField] private int pointValue = 10;
+    [SerializeField] private int pointValue = 20;
 
     private AudioSource _audioSource;
-    //private ShootingGalleryService _shootingGalleryService;
+    private ShootingGalleryService _shootingGalleryService;
 
     void Start()
     {
         _audioSource = FindObjectOfType<AudioSource>();
-        //_shootingGalleryService = FindObjectOfType<ShootingGalleryService>();
+        _shootingGalleryService = FindObjectOfType<ShootingGalleryService>();
 
         if (targetPrefab != null)
         {
@@ -29,6 +29,6 @@ public class CowboyBehavior : MonoBehaviour, ITargetBehavior
 
         _audioSource?.PlayOneShot(spinSound);
 
-        //_shootingGalleryService?.AddToScore(pointValue);
+        _shootingGalleryService?.AddToScore(pointValue);
     }
 }

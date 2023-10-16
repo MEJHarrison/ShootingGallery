@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetBehavior : MonoBehaviour
@@ -13,7 +12,7 @@ public class TargetBehavior : MonoBehaviour
     private AudioSource _audioSource;
     private bool _targetDown = false;
     private ParticleSystem _targetHitParticlesInstance = null;
-    //private ShootingGalleryService _shootingGalleryService;
+    private ShootingGalleryService _shootingGalleryService;
 
     void Start()
     {
@@ -26,7 +25,7 @@ public class TargetBehavior : MonoBehaviour
             _targetHitParticlesInstance = Instantiate(targetHitParticles, transform.position, transform.rotation * paticleRotation);
         }
 
-        //_shootingGalleryService = FindObjectOfType<ShootingGalleryService>();
+        _shootingGalleryService = FindObjectOfType<ShootingGalleryService>();
     }
 
     [ContextMenu("Hit Target")]
@@ -51,13 +50,13 @@ public class TargetBehavior : MonoBehaviour
         }
     }
 
-    //[ContextMenu("Hit Menu Target")]
-    //public void HitMenuTarget()
-    //{
-    //    PlaySoundEffectAndParticles();
+    [ContextMenu("Hit Menu Target")]
+    public void HitMenuTarget()
+    {
+        PlaySoundEffectAndParticles();
 
-    //    _shootingGalleryService.StartGame();
-    //}
+        _shootingGalleryService.StartGame();
+    }
 
     private void PlaySoundEffectAndParticles()
     {
