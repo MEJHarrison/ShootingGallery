@@ -40,10 +40,10 @@ Add prefab to scene
     Close the TMP Important window
 
 In the scene, navigate to Shooting Gallery -> Guns -> Water Pistol
-    Add an XR Grab Interactible to the Water Pistol
-    Under Rigidbody, change Collision Detection from Discrete to Continuous Dynamic
-    Under XR Grab Interable, make the following settings:
-        Movement Type should be switched from Instantaneous to Velocity Tracking
+    * Add an XR Grab Interactible to the Water Pistol
+    * Under Rigidbody, change Collision Detection from Discrete to Continuous Dynamic
+    * Under XR Grab Interable, make the following settings:
+        * Movement Type should be switched from Instantaneous to Velocity Tracking
         Check Smooth Position
         Check Smooth Rotation
         Check Use Dynamic Attach
