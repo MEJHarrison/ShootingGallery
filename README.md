@@ -1,6 +1,8 @@
 # ShootingGallery
  A basic shooting gallery for VR
 
+ ![alt text](Assets/Images/ShootingGallery.png?raw=true)
+
 How to use this project.
 
 These instructions were made with Unity Version: 2021.3.30f1.  If you have a different version of Unity, things might be slightly different.
